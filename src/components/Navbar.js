@@ -3,10 +3,10 @@ import ActivitiesButton from "./ActivitiesButton";
 import HomeButton from "./HomeButton";
 import RoutinesButton from "./RoutinesButton";
 
-const Header = () => {
+const Navbar = () => {
   return (
     <div
-      id="mainHeader"
+      id="navbar"
       style={{
         display: "flex",
         
@@ -27,4 +27,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;

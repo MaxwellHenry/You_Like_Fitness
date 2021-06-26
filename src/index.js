@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 
 import { GetAllActivities, GetAllRoutines, HomePage } from "./components";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   const [activities, setActivities] = useState([]);
@@ -16,6 +17,7 @@ const App = () => {
   return (
     <Router>
       <div className="App">
+          <Navbar />
         <Switch>
             <Route exact path='/'>
                 <HomePage />

@@ -1,11 +1,10 @@
 import React from "react";
-import Header from "./Header";
 
 
 const HomePage = () => {
   return (
     <div id="header">
-        <Header />
+        <h1>WELCOME TO THE TIME OF YOUR LIFE!</h1>
     </div>
   );
 };
