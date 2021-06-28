@@ -35,12 +35,10 @@ export async function registerUser(usernameValue, passwordValue) {
       },
       body: JSON.stringify({
           username: usernameValue,
-          password, passwordValue
+          password: passwordValue
       }),
     });
-    const {
-      data: { token },
-    } = await response.json();
+    const {token} = await response.json();
 
     localStorage.setItem("token", JSON.stringify(token));
   } catch (error) {

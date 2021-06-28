@@ -1,22 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from 'reactstrap'
 
 const HomeButton = () => {
   return (
     <Link to="/">
-      <button
-        style={{
-          backgroundColor: "white",
-          color: "black",
-          height: 75,
-          width: 110,
-          fontSize: 16,
-          boxShadow: "1px 1px 1px black",
-          marginRight: "10px",
-        }}
+      <Button color="primary"
       >
         HomePage
-      </button>
+      </Button>
     </Link>
   );
 };

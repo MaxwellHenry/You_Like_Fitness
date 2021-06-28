@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 
 import { getActivities } from "../api";
+import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
+
 
 const GetAllActivities = (props) => {
   const { activities, setActivities } = props;
@@ -14,19 +16,29 @@ const GetAllActivities = (props) => {
   });
 
   return (
-    <ul>
+<div>
       {activities.map((activity, index) => {
         return (
-          <li key={index}>
-            Activity {index + 1}
-            <ul>
-              <li>{activity.name}</li>
+          <div key={index}>
+            <h2>Activity {index + 1}</h2>
+            <Card style={{
+                border: "2px solid black",
+                margin: '3px',
+            }}>
+              <CardBody>
+                <CardTitle tag="h5">{activity.name}</CardTitle>
+                <CardText>
+                  <h6>Activity Description:</h6>
+                  <ul>
               <li>{activity.description}</li>
             </ul>
-          </li>
+                </CardText>
+              </CardBody>
+            </Card>
+          </div>
         );
       })}
-    </ul>
+    </div>
   );
 };
 

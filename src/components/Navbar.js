@@ -9,8 +9,11 @@ const Navbar = () => {
       id="navbar"
       style={{
         display: "flex",
-        
-        backgroundColor: "white",
+        justifyContent: "space-around",
+        alignItems: 'center',
+        backgroundColor: "black",
+        height: '50px',
+      
 
       }}
     >

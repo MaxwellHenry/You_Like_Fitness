@@ -7,7 +7,9 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import { GetAllActivities, GetAllRoutines, HomePage } from "./components";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { GetAllActivities, GetAllRoutines, HomePage, RegisterUser } from "./components";
 import Navbar from "./components/Navbar";
 
 const App = () => {
@@ -34,6 +36,9 @@ const App = () => {
               setRoutines={setRoutines}
             />
           </Route>
+          {/* <Route path='/register'>
+            <RegisterUser />
+          </Route> */}
         </Switch>
       </div>
     </Router>
