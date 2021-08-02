@@ -1,4 +1,4 @@
-export const BASE_URL = process.env.NODE_ENV === 'production' ? '' : 'https://whispering-brook-69520.herokuapp.com';
+export const BASE_URL = process.env.NODE_ENV === 'production' ? '' : 'https://whispering-brook-69520.herokuapp.com/api';
 
 export async function getActivities() {
   try {
