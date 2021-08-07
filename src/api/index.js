@@ -68,6 +68,7 @@ export async function loginUser(username, password) {
   }
 }
 
+
 export function logoutUser() {
   localStorage.removeItem("data");
 }

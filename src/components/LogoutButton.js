@@ -9,7 +9,7 @@ const LogoutButton = () => {
   return (
       <Button color='secondary'
       onClick={() => {logoutUser(); history.push('/login')}}>
-        LogOut
+        Logout
       </Button>
   );
 };

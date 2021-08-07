@@ -7,7 +7,7 @@ const RegisterUserButton = () => {
     <Link to="/register">
       <Button color='secondary'
       >
-        Login / Register
+        Login or Register
       </Button>
     </Link>
   );

@@ -7,6 +7,7 @@ import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 const GetAllRoutines = (props) => {
   const { routines, setRoutines } = props;
 
+  
   useEffect(() => {
     getRoutines()
       .then((routines) => {

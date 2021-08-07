@@ -7,6 +7,7 @@ import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 const GetAllActivities = (props) => {
   const { activities, setActivities } = props;
 
+  
   useEffect(() => {
     getActivities()
       .then((activities) => {

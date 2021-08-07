@@ -15,7 +15,7 @@ const Navbar = ({data}) => {
         display: "flex",
         justifyContent: "space-around",
         alignItems: 'center',
-        backgroundColor: "black",
+        backgroundColor: "maroon",
         height: '50px',
       
 

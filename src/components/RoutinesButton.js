@@ -7,7 +7,7 @@ const RoutinesButton = () => {
     <Link to="/routines">
       <Button color='secondary'
       >
-        List of Routines
+        All Routines
       </Button>
     </Link>
   );

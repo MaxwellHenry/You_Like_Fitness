@@ -17,8 +17,9 @@ const LoginRegister = (props) => {
         justifyContent: "center",
         alignItems: "center",
       }}
+
     >
-      <h1 style={{ margin: "15px" }}>Register For An Account</h1>
+      <h1 style={{ margin: "15px" }}>Register For An Account?</h1>
       <form
         style={{
           display: "flex",

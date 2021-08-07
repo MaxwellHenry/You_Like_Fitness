@@ -17,6 +17,7 @@ const App = () => {
   const [activities, setActivities] = useState([]);
   const [routines, setRoutines] = useState([]);
 
+  
   return (
     <Router>
       <div className="App">

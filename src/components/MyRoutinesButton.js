@@ -6,10 +6,11 @@ const MyRoutinesButton = () => {
   return (
       <Link to='/myroutines'>
       <Button color='secondary'>
-        My Routines
+        Your Routines
       </Button>
       </Link>
   );
 };
+
 
 export default MyRoutinesButton;

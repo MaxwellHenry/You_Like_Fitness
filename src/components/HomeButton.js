@@ -7,7 +7,7 @@ const HomeButton = () => {
     <Link to="/">
       <Button color="primary"
       >
-        HomePage
+        Home
       </Button>
     </Link>
   );

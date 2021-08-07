@@ -8,7 +8,7 @@ const ActivitiesButton = () => {
     <Link to="/activities">
       <Button color="secondary"
       >
-        List of Activities
+        All Activities
       </Button>
     </Link>
   );
