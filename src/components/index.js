@@ -1,4 +1,6 @@
 export { default as GetAllActivities } from './GetAllActivities'
 export { default as GetAllRoutines } from './GetAllRoutines'
 export { default as HomePage } from './HomePage'
-// export { default as RegisterNewUser } from './RegisterUser'
+export { default as RegisterUser } from './RegisterUser'
+export { default as LoginUser } from './LoginUser'
+export { default as GetMyRoutines } from './GetMyRoutines'

@@ -24,46 +24,70 @@ export async function getRoutines() {
   }
 }
 
-export async function registerUser(usernameValue, passwordValue) {
-  const url = `${BASE_URL}/users/register`;
-
+export async function registerUser(username, password) {
   try {
-    const response = await fetch(url, {
+    const res = await fetch(`${BASE_URL}/users/register`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-          username: usernameValue,
-          password: passwordValue
-      }),
-    });
-    const {token} = await response.json();
-
-    localStorage.setItem("token", JSON.stringify(token));
-  } catch (error) {
-    throw error;
-  }
-}
-
-export async function loginUser(username, password) {
-  const url = `${BASE_URL}/users/login`;
-
-  try {
-    const res = await fetch(url, {
-      method: "POST",
-      headers: { 
-          "Content-Type": "application/json" 
-        },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         username,
         password,
       }),
     });
 
-    const { data: { token } } = await res.json();
+    const data = await res.json();
 
-    localStorage.setItem("token", JSON.stringify(token));
+    localStorage.setItem("data", JSON.stringify(data));
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function loginUser(username, password) {
+  try {
+    const res = await fetch(`${BASE_URL}/users/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username,
+        password,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (data) {
+      localStorage.setItem("data", JSON.stringify(data));
+    } else {
+      return alert('Username or Password is invalid')
+    }
+
+
+  } catch (error) {
+    throw error;
+  }
+}
+
+export function logoutUser() {
+  localStorage.removeItem("data");
+}
+
+export async function getRoutinesByUsername(username) {
+  try {
+    const token = localStorage.getItem("token")
+      ? localStorage.getItem("token")
+      : "";
+
+    const res = await fetch(`${BASE_URL}/users/${username}/routines`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    const data = await res.json();
+
+    return data;
   } catch (error) {
     throw error;
   }

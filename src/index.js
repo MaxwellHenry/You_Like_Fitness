@@ -9,17 +9,20 @@ import {
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { GetAllActivities, GetAllRoutines, HomePage, RegisterUser } from "./components";
+import { GetAllActivities, GetAllRoutines, HomePage, RegisterUser, LoginUser, GetMyRoutines } from "./components";
 import Navbar from "./components/Navbar";
 
 const App = () => {
+  const [data, setData] = useState(JSON.parse(localStorage.getItem('data')))
   const [activities, setActivities] = useState([]);
   const [routines, setRoutines] = useState([]);
 
   return (
     <Router>
       <div className="App">
-          <Navbar />
+          <Navbar 
+          data = {data}
+          />
         <Switch>
             <Route exact path='/'>
                 <HomePage />
@@ -36,9 +39,24 @@ const App = () => {
               setRoutines={setRoutines}
             />
           </Route>
-          {/* <Route path='/register'>
-            <RegisterUser />
-          </Route> */}
+          <Route path='/myroutines'>
+            <GetMyRoutines 
+            data = {data}
+            setData = {setData}
+            routines = {routines}
+            setRoutines = {setRoutines}
+            />
+          </Route>
+          <Route path='/register'>
+            <RegisterUser
+            
+            />
+          </Route>
+          <Route path='/login'>
+            <LoginUser
+             
+            />
+          </Route>
         </Switch>
       </div>
     </Router>

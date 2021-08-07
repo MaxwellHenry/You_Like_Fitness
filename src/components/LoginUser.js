@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 
-import { registerUser } from "../api";
+import { loginUser } from "../api";
 
-const LoginRegister = (props) => {
+const LoginUser = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -18,7 +18,7 @@ const LoginRegister = (props) => {
         alignItems: "center",
       }}
     >
-      <h1 style={{ margin: "15px" }}>Register For An Account</h1>
+      <h1 style={{ margin: "15px" }}>Login To Your Account</h1>
       <form
         style={{
           display: "flex",
@@ -33,19 +33,19 @@ const LoginRegister = (props) => {
           event.preventDefault();
 
           try {
-            await registerUser(username, password);
+            await loginUser(username, password);
             history.push("/routines");
           } catch (error) {
-            console.error(error);
+            console.log(error);
           }
         }}
       >
         <div className="form-group">
-          <h3>Register</h3>
-          <label htmlFor="registerInputUsername">Username</label>
+          <h3>Login</h3>
+          <label htmlFor="loginInputUsername">Username</label>
           <input
             type="text"
-            id="registerInputUsername"
+            id="loginInputUsername"
             placeholder="Username"
             value={username}
             onChange={(event) => setUsername(event.target.value)}
@@ -53,23 +53,23 @@ const LoginRegister = (props) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="registerInputPassword">Password</label>
+          <label htmlFor="loginInputPassword">Password</label>
           <input
             type="password"
-            id="registerInputPassword"
+            id="loginInputPassword"
             placeholder="Password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             style={{ margin: "5px" }}
           />
         </div>
-        <button type="submit">Register</button>
+        <button type="submit">Login</button>
         <h6 style={{ marginTop: "5px" }}>
-          Have an Account? <Link to="/login">Login Here</Link>
+          Need an Account? <Link to="/register">Register Here</Link>
         </h6>
       </form>
     </div>
   );
 };
 
-export default LoginRegister;
+export default LoginUser;
